@@ -10,6 +10,23 @@ Dependencies mean accepted prerequisite outputs, not merely a closed ticket. An 
 
 Confirmed: **Finnish UI on a standard computer monitor**. Exact display specifications remain open. Deployment method and integration device versions are intentionally deferred to their relevant tasks; they do not block current planning or mock-data design.
 
+The overall workflow is Dashboard planning without code, followed by work on the
+separate orchestrator and workers for agentic-coding practice. Planning completion
+is assessed against S1–S8 in [the workflow guide](WORKFLOW.md); it is separate from
+Dashboard implementation authorization. P0-01 owns defining this workflow and its
+completion criteria, not delivering all the later planning outputs itself.
+
+Confirmed requirement D14: allow later features, data sources and monitoring
+targets. The S5 review will trace the impact of a new target, source type and card
+through the design. Detailed mechanisms and affected task criteria remain to be
+refined in their respective planning work.
+
+The dependencies below retain their current meaning for full issue completion.
+They do not prevent preliminary functional documentation of later features before
+the application exists. During backlog refinement, separate planning prerequisites
+from implementation and live-environment verification prerequisites. Preliminary
+notes alone do not complete a discovery issue or authorize its implementation.
+
 ## Overview
 
 | Plan ID | GitHub | Task | Depends on |

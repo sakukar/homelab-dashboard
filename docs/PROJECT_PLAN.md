@@ -8,6 +8,13 @@ a dependency, or having an existing PR does not authorize implementation.
 The user must explicitly authorize implementation after the complete backlog has
 been reviewed. Unresolved phase-specific decisions block their dependent work.
 
+The overall workflow has two stages: plan Dashboard as fully as possible without
+code, then design and build an orchestrator and workers in a separate project for
+agentic-coding practice. Dashboard is their later exercise target, subject to
+separate implementation authorization. The normative planning completion criteria
+S1–S8 and the planning order are in [the workflow guide](WORKFLOW.md).
+The plan is not yet accepted as complete; defining these criteria does not satisfy them.
+
 ## 1. Confirmed requirements
 
 - Fullscreen information display for a home lab, intended for continuous use.
@@ -19,6 +26,9 @@ been reviewed. Unresolved phase-specific decisions block their dependent work.
 - Later phases add real server monitoring, Proxmox, pfSense/WAN/VPN, MikroTik,
   live weather/cameras/household information, then alerts and historical data.
 - First plan the entire project and create its issues. Implementation comes later.
+- Confirmed: the application must accommodate later features, data sources and
+  monitoring targets without rebuilding the whole application. Extension mechanisms
+  and display-growth behavior must be designed before they are treated as accepted.
 - The orchestrator's scheduling, agent management, approvals, credentials, worktrees,
   and PR automation belong to its own project, not this application's backlog.
 
@@ -43,6 +53,7 @@ and update affected issues before their implementation starts.
 | D11 | Cameras and household information | Camera source/protocol/count, snapshot-vs-video and permitted household widgets unknown | Camera/household issues |
 | D12 | History and alerts | Retention, storage budget, thresholds, downtime semantics, acknowledgement and notification destination unknown | Phase 7 |
 | D13 | Existing work | PRs #4–#6 were closed without merging; branches are retained for possible later review, reuse or revision | Acceptance of existing implementation |
+| D14 | Extensibility | Confirmed: allow later features, sources and monitoring targets. Configuration, adapter boundaries, contract evolution and display growth are design topics, not yet approved mechanisms | Architecture, contract, layout and affected issue acceptance; review through S5 |
 
 Device versions and deployment details are intentionally unknown at this stage.
 Do not request them as prerequisites for completing the project plan or designing
@@ -207,11 +218,14 @@ pass, documentation is updated, and its PR is reviewed. A PR existing is not
 acceptance. CI success does not replace actual integration or kiosk checks.
 No agent may merge PRs under the current repository instructions.
 
-Release sequence:
+Planning acceptance and later release sequence:
 
-1. Planning gate: issue catalog is complete, dependencies are acyclic, version 0.1
-   decisions are resolved, existing PR discrepancies are recorded, and the user
-   separately authorizes implementation.
+1. Planning gate: the user accepts the documented evidence for S1–S8 in
+   [the workflow guide](WORKFLOW.md). Deferred environment decisions have named
+   owners, timing and blocked tasks. No running application or implementation
+   authorization is required to complete planning. The next overall work stage
+   belongs to the separate orchestrator/worker project. Before any later Dashboard
+   implementation, obtain separate authorization and resolve that task's blockers.
 2. Version 0.1 gate: mock-only end-to-end dashboard meets P1-12; no live credentials
    or real devices are needed to run it.
 3. Phase 2 gate: approved real server/service sources operate with stale/failure
@@ -236,10 +250,10 @@ to split an implementation issue before scheduling it.
 - If their code is reused later, review it against the accepted contract and make
   a fresh focused PR from the then-current `main`; do not assume old bases remain valid.
 - README/ROADMAP commit `b10209a` and planning commit `fb5a127` remain on
-  `agent/issue-3`. Their documentation is copied into `agent/issue-7`, created from
-  `main`, for a documentation-only PR associated with issue #7.
-- This documentation PR does not add the backend, frontend or Server model code.
-  Its merge into `main` is a user action; it does not authorize application work.
+  `agent/issue-3`. Their documentation was copied into `agent/issue-7`, created from
+  `main`, for documentation-only PR #43 associated with issue #7.
+- PR #43 was merged into `main` on 2026-09-27. It added no backend, frontend or
+  Server model code, did not complete all planning and did not authorize application work.
 
 ## 10. Backlog ownership and execution handoff
 
@@ -253,15 +267,21 @@ must not interpret an open issue, an empty dependency list or the absence of an
 assignee as permission to execute it. Its implementation belongs elsewhere; this
 project only states its handoff requirements.
 
-Before a task is scheduled: confirm implementation authorization, accepted
-prerequisite outputs, resolved decisions, a focused scope and testable acceptance.
+Before an implementation task is scheduled: confirm implementation authorization,
+accepted prerequisite outputs, resolved decisions, a focused scope and testable acceptance.
+Authorized documentation planning does not require application implementation
+authorization. Preliminary functional planning of later phases can proceed without
+a working application, while live-source verification and issue completion still
+require their actual prerequisites. Separate these prerequisite types when refining
+the backlog; no implementation dependencies are removed by this clarification.
 The existing one-issue-at-a-time and one-PR-per-issue rules remain in force.
 
 ## 11. Requirement coverage and change control
 
 | Requirement | Planning / implementation work | Acceptance owner |
 | --- | --- | --- |
-| Separate orchestrator; plan before code | P0-01 and repository instructions | User implementation authorization after planning |
+| Two-stage workflow; plan before code | P0-01 and repository instructions | User plan acceptance against S1–S8; separate later Dashboard implementation authorization |
+| Later features, sources and monitoring targets | D14; P0-01 coordinates coverage in contract, layout and affected tasks | S5 extension review before overall planning acceptance; implementation evidence in the affected release |
 | FastAPI backend and pytest | P1-01, P1-05, P1-10 | P1-12 |
 | React/TypeScript frontend | P1-02, P1-06, P1-10 | P1-12 |
 | Stable server data model and measurement semantics | P0-02, P1-03 | P1-12; live source mapping in each integration |
