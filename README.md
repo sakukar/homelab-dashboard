@@ -10,6 +10,14 @@ The orchestrator itself is not developed in this repository.
 The entire project is being planned and divided into issues before implementation
 is authorized. An open issue or existing PR is not permission to begin coding.
 
+The overall work has two stages: first plan HomeLab Dashboard as fully as possible
+without writing application code, then design and build the orchestrator and
+workers in their separate project to practise agentic coding. The Dashboard
+backlog becomes their later exercise target, subject to separate user authorization
+for Dashboard implementation. Accepting the plan does not grant that authorization.
+The roadmap's phases 0–7 describe Dashboard features, not these two work stages.
+See [the planning completion criteria and next steps](docs/WORKFLOW.md).
+
 - [Detailed project plan](docs/PROJECT_PLAN.md): requirements, proposed defaults,
   open decisions, architecture, contracts and acceptance gates.
 - [Issue catalog](docs/ISSUES.md): task scope, dependencies and GitHub links.
@@ -32,6 +40,9 @@ The dashboard should provide an at-a-glance view of:
 The application is intended to run continuously on a standard computer monitor.
 The user interface language is Finnish. Exact display specifications, deployment
 method and integration device versions will be determined later.
+The design must accommodate new features, data sources and monitoring targets
+without rebuilding the whole application. Specific extension mechanisms remain
+to be designed and reviewed.
 
 ## Initial scope
 
@@ -55,7 +66,8 @@ PRs #4–#6 contain a FastAPI scaffold, React scaffold and provisional Server mo
 created before the planning scope was clarified. They were closed without merging
 on 2026-09-27. Their code remains on `agent/issue-1`, `agent/issue-2` and
 `agent/issue-3` for possible later review; it is not accepted implementation.
-Planning documents are published separately from the `agent/issue-7` branch.
+The initial planning documents were merged into `main` through PR #43 on
+2026-09-27, separately from application code. This did not complete all planning.
 
 Mock server data, populated server cards, UP/DOWN display, failure/recovery
 behavior and the mock weather card are planned work. The empty `orchestrator.py`

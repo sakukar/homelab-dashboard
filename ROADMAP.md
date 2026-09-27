@@ -8,9 +8,16 @@ See [the detailed plan](docs/PROJECT_PLAN.md) for decisions and acceptance rules
 and [the issue catalog](docs/ISSUES.md) for dependencies and GitHub links.
 Phase numbers describe rollout order; they do not authorize work automatically.
 
+The overall two-stage workflow is Dashboard planning without code, followed by
+orchestrator/worker work in a separate project for agentic-coding practice. These
+stages are distinct from the feature phases below. Planning completion is reviewed
+against S1–S8 in [the workflow guide](docs/WORKFLOW.md), independently of later
+Dashboard implementation authorization. Functional planning covers all roadmap
+areas now; environment-specific discovery and verification remain deferred.
+
 | Phase | Scope | Work items | Exit criteria |
 | --- | --- | --- | --- |
-| 0 | Requirements, contract and display specification | P0-01–P0-03 | Version 0.1 decisions, contract examples and layout are agreed; full backlog exists; separate implementation authorization recorded before code starts |
+| 0 | Requirements, contract and display specification | P0-01–P0-03 | Phase 0 specifications are accepted; overall planning completion is separately reviewed against S1–S8, including later-phase functional scope and tracked deferred decisions; no implementation authorization is implied |
 | 1 / v0.1 | Mock-data dashboard | P1-01–P1-12 | Server cards, CPU/RAM/disk, UP/DOWN/UNKNOWN, mock weather, refresh/recovery and kiosk layout pass documented acceptance and deployment checks |
 | 2 | Real server and important-service monitoring | P2-01–P2-05 | Approved server/service sources work with correct units, source isolation, stale states and recovery; mock mode remains usable |
 | 3 | Proxmox | P3-01–P3-03 | Supported hosts and guests have stable identity and read-only observations; partial failures and stopped guests are displayed correctly |
@@ -37,3 +44,7 @@ Confirmed: Finnish user interface on a standard computer monitor. Exact display
 specifications remain open. Installation method and integration device versions
 are deferred to the relevant deployment/discovery tasks; they do not block the
 current planning work.
+
+Confirmed: the design must support adding features, sources and monitoring targets.
+Planning acceptance includes reviewing extension scenarios across the architecture,
+data contract and growing display inventory; specific mechanisms are not yet selected.
