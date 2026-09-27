@@ -2,7 +2,12 @@
 
 HomeLab Dashboard is a fullscreen information display for a home lab.
 
-## Project status: planning
+## Project status: planning paused; implementation not authorized
+
+On 2026-09-27 the user approved a controlled transition to planning the separate
+orchestrator and workers. Dashboard planning remains incomplete and paused; the
+S1–S8 completion criteria have not been accepted as satisfied. See the decision,
+remaining work and return conditions in [the workflow guide](docs/WORKFLOW.md).
 
 This is the target application for a **separate agent-orchestrator project**.
 The orchestrator itself is not developed in this repository.
@@ -10,9 +15,10 @@ The orchestrator itself is not developed in this repository.
 The entire project is being planned and divided into issues before implementation
 is authorized. An open issue or existing PR is not permission to begin coding.
 
-The overall work has two stages: first plan HomeLab Dashboard as fully as possible
-without writing application code, then design and build the orchestrator and
-workers in their separate project to practise agentic coding. The Dashboard
+The overall work has two stages: plan HomeLab Dashboard without application code,
+and design and build the orchestrator and workers in their separate project to
+practise agentic coding. The approved interim transition starts orchestrator
+planning before the full Dashboard plan is complete. The Dashboard
 backlog becomes their later exercise target, subject to separate user authorization
 for Dashboard implementation. Accepting the plan does not grant that authorization.
 The roadmap's phases 0–7 describe Dashboard features, not these two work stages.

@@ -1,6 +1,11 @@
 # HomeLab Dashboard implementation plan
 
-Status: **Planning only. Implementation is paused.**
+Status: **Planning paused and incomplete. Implementation is not authorized.**
+
+On 2026-09-27 the user approved beginning separate orchestrator planning with the
+current Dashboard backlog as its reference. The remaining work, owners and return
+conditions are recorded in [the workflow guide](WORKFLOW.md). This changes the
+work order, not the acceptance status of this plan or its S1–S8 criteria.
 
 This repository is the target application for a separately developed agent
 orchestrator. It does not implement the orchestrator. Creating an issue, assigning
@@ -234,7 +239,9 @@ Planning acceptance and later release sequence:
    [the workflow guide](WORKFLOW.md). Deferred environment decisions have named
    owners, timing and blocked tasks. No running application or implementation
    authorization is required to complete planning. The next overall work stage
-   belongs to the separate orchestrator/worker project. Before any later Dashboard
+   belongs to the separate orchestrator/worker project; the approved 2026-09-27
+   interim transition permits starting its planning before this gate is complete.
+   Before any later Dashboard
    implementation, obtain separate authorization and resolve that task's blockers.
 2. Version 0.1 gate: mock-only end-to-end dashboard meets P1-12; no live credentials
    or real devices are needed to run it.

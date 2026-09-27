@@ -1,5 +1,10 @@
 # Dashboardin käyttötarpeet ja sisältö
 
+Dashboardin suunnittelu on käyttäjän päätöksellä tauolla 27.9.2026 alkaen erillisen
+orkestraattorin suunnittelun ajan. Vahvistetut valinnat säilyvät, mutta tämän
+dokumentin avoimia asioita ei ole ratkaistu tai hyväksytty valmiiksi. Jatkotyöt ja
+paluuehdot on kirjattu [työnkulkuohjeeseen](WORKFLOW.md).
+
 Tila: **osittain vahvistettu suunnitteluluonnos, issue #7 / P0-01**. Tässä määritellään käyttötarpeita
 ja sisältöä valmistumiskriteeriä S1 varten. Dokumentti ei ole toteutuslupa eikä
 käyttöliittymän lopullinen määrittely. Ehdotukset ja avoimet asiat eivät ole
@@ -103,6 +108,6 @@ valinnat on kirjattu vastauksineen, käyttötapaukset ja sisällön rajaus on k�
 käyttäjän kanssa läpi ja avoimet asiat on osoitettu oikeisiin jatkotehtäviin.
 Tämä luonnos ei vielä täytä koko S1-kriteeriä eikä sulje issueta #7.
 
-Seuraava suunnittelutehtävä on tietojen ja tilojen merkityksen täsmentäminen
+Dashboardin suunnittelun jatkuessa seuraava suunnittelutehtävä on tietojen ja tilojen merkityksen täsmentäminen
 issuessa #8 sovittujen käyttötarpeiden pohjalta. Lopulliset näkymäluonnokset ja
 tilan loppumisen yksityiskohdat kuuluvat issueen #9.

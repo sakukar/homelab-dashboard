@@ -6,6 +6,7 @@ HomeLab Dashboard is a fullscreen web dashboard for monitoring a home lab and di
 
 - This repository is a target application. The agent orchestrator is a separate project.
 - Current status: planning only. Do not write application or orchestrator code until the user explicitly authorizes implementation after the project backlog is planned.
+- Dashboard planning is paused by the user's 2026-09-27 decision to begin separate orchestrator planning. The Dashboard plan remains incomplete; S1–S8 are not accepted as satisfied and implementation is not authorized. Follow the remaining-work and return conditions in `docs/WORKFLOW.md`.
 - The overall workflow has two stages: plan Dashboard as fully as possible without code, then work on the orchestrator and workers in their separate project to practise agentic coding. Dashboard implementation remains subject to separate user authorization.
 - Use the planning completion criteria S1–S8 in `docs/WORKFLOW.md`. Plan acceptance and implementation authorization are separate decisions; roadmap phases 0–7 are not the two overall work stages.
 - During Dashboard planning, produce documentation and non-executable layout specifications, not application code, test code or runnable prototypes.

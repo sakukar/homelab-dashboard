@@ -11,8 +11,9 @@ jossa orkestraattori ohjaa workereita. HomeLab Dashboard on myöhempi kohdeproje
    hyväksymiskriteerit. Tuotoksina ovat dokumentaatio, koodittomat näkymäluonnokset
    ja issuet. Tässä vaiheessa ei kirjoiteta sovelluskoodia, testikoodia eikä
    ajettavia prototyyppejä. Myöskään vanhaa ehdokaskoodia ei oteta käyttöön.
-2. **Orkestraattori ja workerit erillisessä projektissa.** Dashboardin suunnitelman
-   hyväksymisen jälkeen käyttäjä siirtyy niiden suunnitteluun ja rakentamiseen.
+2. **Orkestraattori ja workerit erillisessä projektissa.** Alkuperäisessä järjestyksessä
+   niiden työ aloitetaan Dashboardin suunnitelman hyväksymisen jälkeen. Käyttäjä
+   hyväksyi 27.9.2026 alla kuvatun välisiirtymän orkestraattorin suunnitteluun jo nyt.
    Tarkoitus on testata ja harjoitella agenttista koodausta. Dashboardin suunnitellut
    tehtävät toimivat myöhemmin harjoituskohteena käyttäjän erikseen antaman
    Dashboardin toteutusluvan mukaisesti. Orkestraattorin toteutuksesta ja sen
@@ -21,6 +22,40 @@ jossa orkestraattori ohjaa workereita. HomeLab Dashboard on myöhempi kohdeproje
 Roadmapin vaiheet 0–7 kuvaavat Dashboardin ominaisuuksien etenemistä. Ne eivät ole
 nämä kaksi työskentelyvaihetta. Suunnitelman hyväksyminen, dokumentti-PR:n
 yhdistäminen tai suunnitteluissuen sulkeminen ei anna Dashboardin toteutuslupaa.
+
+## Hallittu välisiirtymä 27.9.2026
+
+Käyttäjä hyväksyi Dashboardin suunnittelun tauottamisen ja siirtymisen erillisen
+orkestraattoriprojektin suunnitteluun. Dashboardin tarkoitus, teknologiat, roadmap,
+39 tehtävän backlog sekä vahvistetut käyttöperiaatteet riittävät tämän työn
+lähtökohdaksi. **Dashboardin suunnitelma on keskeneräinen, S1–S8-kriteereitä ei ole
+hyväksytty täytetyiksi eikä Dashboardin toteutuslupaa ole annettu.**
+
+Tämä päätös tarkentaa aiempaa työjärjestystä. Valmistumiskriteerit säilyvät koko
+Dashboard-suunnitelman hyväksymisen mittarina. Avoimia asioita ei muuteta hyväksytyiksi
+oletuksiksi tauon aikana. Seuraavat työt odottavat Dashboardin suunnittelun jatkamista:
+
+| Keskeneräinen työ | Vastuu / valmistumiskriteeri | Milloin jatketaan |
+| --- | --- | --- |
+| Käyttötapausten ja sisältörajauksen katselmointi; tärkeimmät kohderyhmät ja avoimet sisältövalinnat | #7, S1; PRODUCT_SCOPE.md | Suunnittelua jatkettaessa, ennen niistä riippuvan tehtävän hyväksymistä toteutukseen |
+| Tietosopimus, tilojen merkitykset, mittausajat, virheet ja esimerkkivastaukset | #8, S3 | Ennen tietomallin tai rajapinnan toteutusta |
+| Koodittomat näkymäluonnokset, aina näkyvät tiedot, ryhmittely ja automaattinen vaihto | #9, S2 | Ennen niitä käyttävien näkymien toteutusta |
+| Yhteisten osien vastuut, asetukset ja palautuminen; laajennettavuuden kolme läpikäyntiä | #7 koordinoi jatkotehtävien rajauksen, S4–S5 | Ennen riippuvien toteutustehtävien valintaa |
+| Suunnittelu-, toteutus- ja ympäristöriippuvuuksien erottelu sekä paikallisen ja GitHub-backlogin täsmennys | #7, S6 | Ennen tehtävien antamista workereille |
+| Hyväksymistapausten täydentäminen ja avointen päätösten katselmointi | #7 koordinoi, #8/#9 ja vaihekohtaiset tehtävät, S7–S8 | Tehtäväkohtaisesti ennen toteutusta; koko suunnitelman hyväksyntä erikseen |
+| Asennustavan ja oikeiden laitteiden/lähteiden selvitykset | #17, #19, #24, #27, #30 ja #33 | Vasta relevantin kohdeympäristön ollessa tiedossa, ennen riippuvia integraatioita |
+
+Ensimmäinen työ erillisessä orkestraattoriprojektissa on ihmisen, orkestraattorin ja
+workerin vastuiden sekä yhden tehtävän elinkaaren määrittely. Sen teknologiavalinnat,
+backlog ja toteutuslupa käsitellään siellä ennen koodia.
+
+Ennen ensimmäistä Dashboardin koodausharjoitusta palataan valitun issuen lähtötietoihin:
+tarvittavat määrittelyt viimeistellään, riippuvuuksien hyväksyntä ja avoimet päätökset
+tarkistetaan sekä Dashboardin toteutukselle hankitaan erillinen käyttäjän lupa.
+Orkestraattorin valmistuminen tai sen toteutuslupa ei täytä näitä ehtoja.
+
+Siirtoa koskeva dokumentti-PR katselmoidaan ja käyttäjä yhdistää sen. PR tai tauon
+kirjaaminen ei sulje issueta #7 eikä muita keskeneräisiä suunnitteluissueita.
 
 ## Milloin Dashboardin suunnittelu on valmis?
 
@@ -45,14 +80,16 @@ suunnitelman hyväksymistä, kun vaikutukset ja varmennuksen ehdot on kuvattu.
 Ympäristöstä riippumattomia sisältö- tai toimintapäätöksiä ei siirretä vain siksi,
 että toteutusta ei ole aloitettu. Ehdotusta ei kirjata vahvistetuksi vaatimukseksi.
 
-**Nykytila:** kaksivaiheinen toimintamalli ja laajennettavuuden tarve on vahvistettu
-käyttäjän kanssa. Tämä kirjaus määrittelee valmistumiskriteerit; se ei todista
-niiden täyttymistä. Dashboardin suunnitelmaa ei ole vielä hyväksytty valmiiksi,
+**Nykytila:** Dashboardin suunnittelu on käyttäjän päätöksellä tauolla erillisen
+orkestraattorin suunnittelun ajan. Valmistumiskriteerit on määritelty, mutta
+niiden täyttymistä ei ole hyväksytty. Dashboardin suunnitelma on keskeneräinen,
 eikä Dashboardin toteutusta ole valtuutettu. Issue #7 määrittelee toimintamallin ja
 hyväksymisehdot; sen valmistuminen ei tarkoita, että esimerkiksi issueiden #8 ja #9
 suunnittelutuotokset tai kaikki yllä olevat ehdot olisivat valmiit.
 
 ## Sisällöllisen suunnittelun järjestys
+
+Tätä järjestystä jatketaan, kun Dashboardin suunnittelu otetaan uudelleen työn alle.
 
 1. Sovitaan Dashboardin käyttötarpeet, sisältö ja tietojen tärkeysjärjestys.
 2. Määritellään tietojen ja tilojen merkitys sekä API-sopimus (issue #8).
@@ -98,8 +135,9 @@ sulkeminen ei poista committeja tai tarkoita alkuperäisten issueiden valmistumi
 
 ## Mitä tapahtuu dokumenttien jälkeen?
 
-- Kun ehdot S1–S8 on katselmoitu ja käyttäjä on hyväksynyt suunnitelman,
-  siirrytään kaksivaiheisen toimintamallin toiseen vaiheeseen erillisessä projektissa.
+- Käyttäjän hyväksymän välisiirtymän mukaisesti Dashboard jää suunnittelutauolle
+  ja erillisessä projektissa aloitetaan orkestraattorin suunnittelu. Koko
+  Dashboard-suunnitelman hyväksyntä S1–S8-kriteereillä jää myöhemmäksi.
 - Dashboardin toteutus odottaa erillistä lupaa. Suunnitteluissue voidaan hyväksyä
   valmiiksi omien tuotostensa perusteella ilman toteutuslupaa.
 - Erillisessä orkestraattoriprojektissa suunnitellaan ensin ihmisen, orkestraattorin
