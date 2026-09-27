@@ -1,6 +1,10 @@
 # Roadmap
 
 **Planning only.** This is the HomeLab Dashboard target-project roadmap.
+Dashboard planning is paused by the user's 2026-09-27 decision while the separate
+orchestrator is planned. The plan is incomplete and implementation remains
+unauthorized. Remaining planning work and return conditions are recorded in
+[the workflow guide](docs/WORKFLOW.md); no roadmap phase is completed by the pause.
 The agent orchestrator is a separate project. Implementation starts only after
 the backlog has been planned and the user separately authorizes execution.
 
@@ -13,7 +17,7 @@ orchestrator/worker work in a separate project for agentic-coding practice. Thes
 stages are distinct from the feature phases below. Planning completion is reviewed
 against S1–S8 in [the workflow guide](docs/WORKFLOW.md), independently of later
 Dashboard implementation authorization. Functional planning covers all roadmap
-areas now; environment-specific discovery and verification remain deferred.
+areas when resumed; environment-specific discovery and verification remain deferred.
 
 | Phase | Scope | Work items | Exit criteria |
 | --- | --- | --- | --- |

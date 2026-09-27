@@ -2,6 +2,11 @@
 
 **Planning only; application implementation is not authorized.**
 
+Dashboard planning is paused under the user's 2026-09-27 interim-transition
+decision. The backlog is a reference for separate orchestrator planning; no issue
+is completed or authorized for implementation by that transition. See the
+remaining work and return conditions in [the workflow guide](WORKFLOW.md).
+
 This catalog covers the HomeLab Dashboard target application, not its separate agent orchestrator. See [the project plan](PROJECT_PLAN.md) for confirmed requirements, proposed defaults, unresolved decisions and release gates.
 
 Total: **39 issues** (36 new planning items and the three existing issues refined). Every issue is open/planned. PRs #4–#6 were closed without merging; their branches retain unaccepted candidate code for later review.
