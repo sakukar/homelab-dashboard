@@ -34,6 +34,10 @@ The plan is not yet accepted as complete; defining these criteria does not satis
 
 ## 2. Decisions and proposed defaults
 
+The Finnish [product scope draft](PRODUCT_SCOPE.md) collects use cases, content
+boundaries and P0-01 decisions. It distinguishes the user's confirmed interaction,
+priority and overflow choices from remaining proposals and P0-03 layout details.
+
 Confirmed choices are identified below; other values remain proposals or open
 questions. Do not silently turn an unknown into a supported integration or promise. Record decisions in this table
 and update affected issues before their implementation starts.
@@ -42,7 +46,7 @@ and update affected issues before their implementation starts.
 | --- | --- | --- | --- |
 | D01 | Display and browser | Confirmed: standard computer monitor. Exact resolution, size, orientation and browser remain open. 1920×1080 and 1280×720 are proposed test viewports only, not confirmed hardware requirements | Final layout and kiosk acceptance |
 | D02 | UI language and units | Confirmed: Finnish UI, including status/error/empty-state text. Celsius, metric units, 24-hour clock and Europe/Helsinki remain proposed defaults; API identifiers may stay English | Only remaining unit/time choices; language is resolved |
-| D03 | Visible server count | Proposed six cards without scrolling at 1080p; explicit empty, one, six and overflow scenarios; overflow behavior to be decided | Layout acceptance |
+| D03 | Visible server count and overflow | Confirmed 2026-09-27: key information stays visible while other content rotates automatically. Exact persistent content, grouping, rotation interval/order and visible count remain open. Six cards at 1080p is still a proposal, not a fixed application limit | Detailed layout acceptance in P0-03 |
 | D04 | Deployment | Deferred: user cannot select the installation method yet. P1-11 must assess the eventual host and propose one supported path before packaging. No container/systemd choice is confirmed | Deployment packaging and acceptance, not current planning |
 | D05 | Access boundary | Proposed read-only LAN display behind the existing network boundary; decide whether application login or reverse-proxy authentication is required | Deployment and live integration exposure |
 | D06 | Physical/virtual server inventory | OS, host counts, identifiers, desired measurements, filesystem selection and available read-only monitoring interfaces unknown | Phase 2 collector choice |
@@ -54,6 +58,8 @@ and update affected issues before their implementation starts.
 | D12 | History and alerts | Retention, storage budget, thresholds, downtime semantics, acknowledgement and notification destination unknown | Phase 7 |
 | D13 | Existing work | PRs #4–#6 were closed without merging; branches are retained for possible later review, reuse or revision | Acceptance of existing implementation |
 | D14 | Extensibility | Confirmed: allow later features, sources and monitoring targets. Configuration, adapter boundaries, contract evolution and display growth are design topics, not yet approved mechanisms | Architecture, contract, layout and affected issue acceptance; review through S5 |
+| D15 | Interaction model | Confirmed 2026-09-27: primarily passive; important information is visible without clicking. Optional detail views remain undecided; see PRODUCT_SCOPE.md | Principle resolved; detailed interaction design in P0-03 and later feature planning |
+| D16 | Information priority | Confirmed 2026-09-27: faults and connection problems first, then server status/resource usage, then weather. Other future cards and simultaneous-fault presentation remain to be specified | Principle resolved; detailed display hierarchy in P0-03 |
 
 Device versions and deployment details are intentionally unknown at this stage.
 Do not request them as prerequisites for completing the project plan or designing
@@ -166,8 +172,12 @@ connections in the default test suite.
 - Server identity, availability and key usage values remain readable at the agreed
   viewing distance; typography and contrast are reviewed on the actual display.
 - Cover long names, maximum planned card count, empty inventory and missing weather.
-- Agree on overflow behavior: paging, rotation or scrolling. Do not silently hide
-  servers or invent a complex carousel.
+- Confirmed overflow principle: key information stays visible while other content
+  rotates automatically (D03). Specify persistent content, grouping and timing in
+  P0-03; do not silently hide servers or assume a fixed total inventory limit.
+- The primarily passive display exposes important information without clicks (D15).
+  Faults and connection problems take priority over server status/resource usage,
+  followed by weather (D16); this does not introduce Phase 7 alert logic into v0.1.
 - The weather card cannot block server rendering if its data is unavailable.
 - Browser kiosk startup is an operations concern. An in-app fullscreen button is
   optional; any Fullscreen API use must handle rejection and escape correctly.

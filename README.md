@@ -20,6 +20,8 @@ See [the planning completion criteria and next steps](docs/WORKFLOW.md).
 
 - [Detailed project plan](docs/PROJECT_PLAN.md): requirements, proposed defaults,
   open decisions, architecture, contracts and acceptance gates.
+- [Käyttötarpeet ja sisältö](docs/PRODUCT_SCOPE.md): suomenkielinen suunnitteluluonnos,
+  sisältörajaukset ja käyttäjän kanssa käsiteltävät valinnat.
 - [Issue catalog](docs/ISSUES.md): task scope, dependencies and GitHub links.
 - [Roadmap](ROADMAP.md): phase order and completion criteria.
 - [Git-työnkulku ja eteneminen](docs/WORKFLOW.md): suomenkielinen ohje haaroista, PR:istä ja projektien etenemisestä.
